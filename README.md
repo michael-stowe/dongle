@@ -1,4 +1,4 @@
-dongle
+Dongle
 ======
 
-Classic style rpg with terrible artwork.
+Dongle is a classic style rpg with terrible artwork. (Written in python)
