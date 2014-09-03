@@ -1,0 +1,99 @@
+[floor]
+tileset = tileset.png
+map =	........bb....2w
+	........bb....2w
+    	........bb....2w
+	........bb....2w
+	........bb....2w
+	........bb....2w
+	bbbbbbbbbb....2w
+	bbbbbbbbbb....2w
+	..............2w
+	..............2w
+	..............2w
+	..............2w
+	444444444444448w
+	wwwwwwwwwwwwwwww
+
+exits = u,8,0,L1_21.map
+	u,9,0,L1_21.map
+	l,0,5,L1_12.map
+	l,0,6,L1_12.map
+
+[.]
+name = green
+tile = 0,0
+
+[@]
+name = flower
+tile = 0,1
+
+[,]
+name = lightgrass
+tile = 0,2
+
+[#]
+name = tallgrass
+tile = 0,3
+
+[1]
+name = beach_left
+tile = 0,4
+
+[2]
+name = beach_right
+tile = 0,5
+
+[3]
+name = beach_top
+tile = 0,6
+
+[4]
+name = beach_bottom
+tile = 0,7
+
+[5]
+name = beach_ctl
+tile = 0,8
+
+[6]
+name = beach_ctr
+tile = 0,9
+
+[7]
+name = beach_cbl
+tile = 0,10
+
+[8]
+name = beach_cbr
+tile = 0,11
+
+[s]
+name = sand
+tile = 0,12
+
+[S]
+name = sand_2
+tile = 0,13
+
+[r]
+name = rock
+tile = 0,14
+wall = true
+
+[b]
+name = brick
+tile = 1,0
+
+[w]
+name = water
+tile = 1,1
+wall = true
+
+[g]
+name = gravel
+tile = 1,2
+
+[c]
+name = concrete
+tile = 1,3
