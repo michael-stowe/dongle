@@ -13,9 +13,10 @@ TRINK2_SLOT = 7
 INV_SLOT    = 8
   
 class character(object):
-    def __init__(self, char_name='Dongle',char_job='Fighter', sprite_file='dongle.png'):
+    def __init__(self, char_name='Dongle',char_job='Fighter', sprite_file='images/dongle.png'):
         #!!!!! make sure character name is 10 chars or less
         self.name = str(char_name)
+        self.sprite_file = sprite_file
         self.job = char_job
         self.hp = 20
         self.mp = 20
@@ -35,7 +36,7 @@ class character(object):
         self.abilities = []
 
         #character sprites
-        sprites = pygame.image.load('dongle.png').convert()
+        sprites = pygame.image.load(self.sprite_file).convert()
         self.image = [sprites.subsurface((0,0,41,50)),sprites.subsurface((41,0,41,50))]
         self.image[0].set_colorkey((255,255,255))
         self.image[1].set_colorkey((255,255,255))

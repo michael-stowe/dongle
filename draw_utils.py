@@ -19,6 +19,7 @@ TRINK1_SLOT = 6
 TRINK2_SLOT = 7
 INV_SLOT    = 8
 
+IMAGE_DIR = 'images/'
 
 #class for parsing map files
 class map(object):
@@ -30,7 +31,7 @@ class map(object):
         self.tiles_x = 0
         self.tiles_y = 0
         self.tileset_file = ''
-    
+        
     def load_map(self, map_file):
         #map is the level map
         self.map = []
@@ -38,7 +39,7 @@ class map(object):
         self.key = {}
         parser = configparser.ConfigParser()
         parser.read(map_file)
-        self.tileset_file = parser.get("floor","tileset")
+        self.tileset_file = IMAGE_DIR + parser.get("floor", "tileset")
         self.map = parser.get("floor", "map").split("\n")
         #load exits
         self.exits = []
@@ -119,7 +120,7 @@ class map(object):
 #---------end class map--------------
     
 class menue(object):
-    def __init__(self, menue_type, ilist, menue_file='menues.png'):
+    def __init__(self, menue_type, ilist, menue_file=IMAGE_DIR + 'menues.png'):
         #!!!!!!add error catching for bad filenames/menue types
         #load menue tiles, font and menue item list
         self.load_tiles(menue_file)   
@@ -329,7 +330,7 @@ class menue(object):
         #draw the characeter
         self.menue.blit(character.image[character.state],BATTLE_POS[4])
         #draw the statusbar
-        image = pygame.image.load("status.png").convert()
+        image = pygame.image.load(IMAGE_DIR + "status.png").convert()
         self.clear('status_bar')
         status_bar = pygame.Surface((len(encounter.status) * 40, 40))
 
@@ -561,7 +562,7 @@ class menue(object):
 #---------end class main_menue-------
 
 class battle_bar(object):
-    def __init__(self, bar_type, filled, file='bars.png'):
+    def __init__(self, bar_type, filled, file=IMAGE_DIR + 'bars.png'):
         image = pygame.image.load(file).convert()
         self.bar_type = bar_type
         if self.bar_type == 'health':
@@ -594,7 +595,7 @@ class battle_bar(object):
 #end class battle_bar
             
 class xpbar(object):
-    def __init__(self,width,file='bars.png'):
+    def __init__(self,width,file=IMAGE_DIR + 'bars.png'):
         image = pygame.image.load(file).convert()
         
         self.width = width
@@ -618,7 +619,7 @@ class xpbar(object):
         
 #----------end xpbar class-----------
 class scrollbar(object):
-    def __init__(self, height, file='bars.png'):
+    def __init__(self, height, file=IMAGE_DIR + 'bars.png'):
         image = pygame.image.load(file).convert()
         #chop up the last element of the menues tileset into scroll elements
         self.tiles = []
@@ -653,7 +654,7 @@ class scrollbar(object):
     
 #-----------end scrollbar class---------
 class animation(object):
-    def __init__(self, row, aoe=False, file='animations.png'):
+    def __init__(self, row, aoe=False, file=IMAGE_DIR + 'animations.png'):
         image = pygame.image.load(file).convert()
         width, height = image.get_size()
 
@@ -679,7 +680,7 @@ class animation(object):
         
 #-----------end animation class---------
 class font(object):
-    def __init__(self, font_file='font.png', width=13, height=13):
+    def __init__(self, font_file=IMAGE_DIR + 'font.png', width=13, height=13):
         #!!!!!!!add error checking for file
         self.FONT_WIDTH = width
         self.FONT_HEIGHT = height
